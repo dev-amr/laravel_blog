@@ -30,6 +30,7 @@
                 </button>
               </div>
               <form action="{{action('PostsController@destroy',$post['id'])}}" method="post">
+              <!-- <input type="hidden" name="_method" value="DELETE"> -->
                   {{method_field('delete')}}
                   {{csrf_field()}}
               <div class="modal-body">

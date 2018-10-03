@@ -91,7 +91,9 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         //check if the user is the correct owner of the post
-        if(auth()->user()->id !== $post->user_id)
+        $current_user_id = intval(auth()->user()->id);
+        $post_owner_id = intval($post->user_id);
+        if($current_user_id !== $post_owner_id)
         {
             return redirect('/')->with('error', 'unauthorised page!');
         }
@@ -141,7 +143,9 @@ class PostsController extends Controller
       //echo "delete data!!";
       $post = Post::find($id);
       //check if the user is the correct owner of the post
-      if(auth()->user()->id !== $post->user_id)
+        $current_user_id = intval(auth()->user()->id);
+        $post_owner_id = intval($post->user_id);
+        if($current_user_id !== $post_owner_id)
       {
           return redirect('/')->with('error', 'unauthorised page!');
       }
