@@ -1,0 +1,71 @@
+// added
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+
+//added
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    //top added
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+#flash-message {
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    right: 20px;
+    animation: flash-message 4s forwards;
+}
+
+@keyframes flash-message {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+#tags {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#tags li {
+    display: inline;
+    padding: 0 1em 0 0;
+}
+
+img.navbar-brand {
+    width: 100px;
+}
